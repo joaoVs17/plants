@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}   
+{% load livereload_tags %}
+{% livereload_script %}
+{% block title %}Home{% endblock title %}
+{% block cssDoc %}<link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">{% endblock cssDoc %}
+
+{% block content %}
+
+<header id="">
+    <nav id="navbar">
+        <img src="{% static 'imgs/tree.png' %}" id="ico" alt="">
+        <div id="brand">PLANTS</div>
+        <div id="nav2">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Plantas</a></li>
+                <li><a href="{% url 'sobre' %}">Sobre</a></li>
+            </ul>
+        </div>
+
+        <div id="login">
+            <ul>
+                <li><a id="signin">Entrar</a></li>
+                <li><a  id="signup">Criar Conta</a></li>
+            </ul>
+        </div>
+        <div>
+            
+        </div>
+    </nav>
+</header>
+
+<div id="cont" >
+    <div id="c">
+        <div id="title">
+            <p>Seu Repositório de Plantas !!!</p>
+        </div>
+        <div id="text">
+            <p>Bem Vindo! Este é o plants, um repositório comunitário de plantas! 
+            Aqui você pode ver um catálogo de plantas criado em conjunto por todos! Quer fazer parte disso? 
+            Basta criar a sua conta!</p>
+        </div>
+    </div>
+    <!--<div id="butt">
+        <div id="but">
+            <a href="#"><img src="https://pics.freeicons.io/uploads/icons/png/11184707741547546475-512.png" alt=""></a>
+        </div>
+    </div>-->
+</div>
+
+<div id="signupModal" style="display: none" class="modal">
+    <div class="modal-content">
+        <div id="fbutton">
+            <div><p id="cad-log"></p></div>
+            <button class="close">&times;</button>
+        </div>
+        <div id="ftext">
+            <form action="" method="POST" id='formu'>
+                {% if request.status == 1 %}
+                <input type="hidden" value="1">
+                batatas
+                {% endif %}
+                
+                {% csrf_token %}
+                <div id="form-items">
+                    <div class="f-g">
+                        <label for="nome">Nome de usuário:</label>
+                        <input type="text" name="username" placeholder="Digite seu nome de usuário" required>
+                    </div>
+                    <div class="f-g">
+                        <label for="senha">Senha:</label>
+                        <input type="password" name="password" id='senha' placeholder="Digite a sua senha" required>
+                    </div>
+                    <div class="f-g" id="confirmar-senha">
+                        <label for="senha">Confirmar Senha:</label>
+                        <input type="password" name="conf-senha" required id='confir' placeholder="Digite sua senha novamente">
+                        <p id="msg" style='color:red;'></p>
+                    </div>
+                    <div class="f-g-2">
+                        <button type="submit" formaction="{% url 'register' %}" id='btncadastro' name="cadastro"  value="Enviar">Enviar</button>
+                        <button type="submit" formaction="{% url 'auth' %}" id='btnlogin'>Entrar</button>
+                        <button type="reset" value="redefinir">Redefinir</button>
+                    </div>
+                    <div id='perg'>
+                        <p id="pergunta"></p> <a href='#' id='acao'></a>
+                    </div>
+                </div>
+                <input type="hidden" id="url" data-url="{% url 'register' %}" />
+            </form>
+        </div>
+    </div>
+</div>
+<!--MODAL ENTRAR-->
+
+
+<script src="{% static '/scripts/modalCadastro.js' %}"></script>
+
+
+
+{% endblock content %}
+
+

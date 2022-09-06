@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static %}
+{% load livereload_tags %}
+{% livereload_script %}
+{% block title %}Main{% endblock title %}
+{% block cssDoc %}<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">{% endblock cssDoc %}
+
+{% block content %}
+
+<header id="" >
+    <nav id="navbar">
+        <img src="{% static 'imgs/tree.png' %}" id="ico" alt="">
+        <div id="nav2">
+            <ul>
+                <li><a href="{% url 'comunidade' %}">Plantas da Comunidade</a></li>
+            </ul>
+        </div>
+        <div id="account">
+            <div id="mac"><a href="{% url 'myaccount'%}" id="btnMp">Feed</a></div>
+            <div id="mp"><a href="#" id="btnMp">Minhas Plantas</a></div>
+            <div id="exit"><a href="{% url 'exit' %}">Sair</a></div>
+            <div id="user"><div>{{request.user.username.0}}</div></div>
+        </div>
+    </nav>
+</header>
+
+{% if status == '0' %}
+    <div class="alert alert-success d-flex align-items-center justify-content-center">
+        Planta cadastrada com sucesso!!!
+    </div>
+{% endif %}
+
+{% if status == '1' %}
+    <div class="alert alert-warning d-flex align-items-center justify-content-center">
+        Essa planta já está cadastrada
+    </div>
+{% endif %}
+
+{% if status == '2' %}
+    <div class="alert alert-danger d-flex align-items-center justify-content-center">
+        Houve um erro do sistema
+    </div>
+{% endif %}
+
+
+<div id="container">
+    <div id="box">
+        <div id="myplants">
+            <h1>Minhas Contribuições</h1>
+            <br>
+            <a id="btnAdd" href="{% url 'addPlanta' %}">Adicionar</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nome Científico</th>
+                        <th>Data Adição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>         
+                    {% for planta in plantas %}
+                        {% if planta.contributor == request.user %}
+                            <tr>
+                                <td>{{planta.name}}</td>
+                                <td>{{planta.scientific_name}}</td>
+                                <td>{{planta.last_modf}}</td>
+                                <td>
+                                    <a href="#" class="btn btn-warning" href="{% url 'editPlant' planta.pk %}" id="edit">Edit</a>
+                                    <a href="{% url 'delPlant' planta.pk%}" class="btn btn-danger">Del</a>
+                                </td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/scripts/myplants.js' %}"></script>
+
+
+{% endblock content %}
+

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}   
+{% load livereload_tags %}
+{% livereload_script %}
+{% block title %}Cadastrar Planta{% endblock title %}
+{% block cssDoc %}<link rel="stylesheet" type="text/css" href="{% static '/css/cadastroPlanta.css' %}">{% endblock cssDoc %}
+
+{% block content %}
+
+    <div id="container">
+        <div id="box">
+            <div id="title">
+                    Cadastrar Planta
+            </div>
+            <div id="form">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div id="ipts_2">
+                        <input class="nome" type="text" name="nome" placeholder="Nome popular" required>
+                        <input class="nome" type="text" name="cientifico" placeholder="Nome científico" required>
+                    </div>
+                    <div id="ipts_1">
+                        <input type="text" name="origem" placeholder="Origem" required>
+                        <input type="text" name="url" placeholder="Coloque um link de imagem aqui" required>
+                    </div>
+                    <div id="about">
+                        <p>Sobre:</p>
+                        <div id="lrow">
+                            <div id="textarea" name="sobre"><textarea rows="7" type="text" name="sobre" id="" required></textarea></div>
+                            <div id="buttons">
+                                <input class="btnf" type="submit" value="Cadastrar">
+                                <a href="{% url 'myplants' %}" class="btnf">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+

@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    max-width: 100%;
+}
+
+header {
+    background-color: none;
+    display: flex;
+    min-width: 900px;
+}
+
+header #brand{
+    height: 100%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+header #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    max-height: 5rem;
+    background-color: none;
+}
+
+header #navbar #ico{
+    height: 5rem;
+    width: auto;
+    background-color: none;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+
+header #navbar #nav2 {
+    background-color: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header #navbar #nav2 ul{
+    margin: 0;
+    height: 100%;
+    background-color: none;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap:3rem;
+}
+
+header #navbar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    height: 3rem;
+    width: 6rem;
+    font-weight: bold;
+    border: 1px solid none;
+    border-radius: 0.7rem;
+}
+
+header #navbar #nav2 ul li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    color: black;
+}
+
+header #navbar #nav2 ul li a:hover{
+    background-color: lightgray;
+}
+
+header #navbar #login {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+
+header #navbar #login ul{
+    
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+header #navbar #login ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    height: 3rem;
+    width: 6rem;
+    font-weight: bold;
+    border: 1px solid none;
+    border-radius: 0.7rem;
+}
+
+header #navbar #login ul li #signin{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: #26847B;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    color: white;
+}
+
+header #navbar #login ul li #signin:hover{
+    background-color: #216869;
+}
+
+header #navbar #login ul li #signup{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: lightgray;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1rem;
+    color: black;
+}
+
+header #navbar #login ul li #signup:hover{
+    background-color: darkgray;
+}
+
+#container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container #box {
+    width: 80%;
+    height: 80%;
+    padding-top: 30px;
+}
+
+/*Modal*/
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color:rgb(30,30,30, 0.8);
+}
+
+.modal .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 0.7rem;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 750px;
+    min-height: 600px;
+    box-shadow: #222;
+    
+}
+
+.modal .modal-content #fbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40%;
+    background-color: none;
+}
+
+.modal .modal-content #fbutton div {
+    margin-top: 1rem;
+    border-radius: 0.7rem;
+}
+
+.modal .modal-content #fbutton div p {
+    font-size: xx-large;
+}
+
+.modal .modal-content #fbutton .close {
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+    float: right;
+    font-weight: 400;
+    width: 3rem;
+    height: 3rem;
+    font-size: xx-large;
+    border-radius: 100%;
+}
+
+.modal .modal-content #fbutton .close:hover {
+    background-color: darkgray;
+}
+
+.modal .modal-content #ftext form #form-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.modal .modal-content #ftext form #form-items .f-g{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+}
+
+.modal .modal-content #ftext form #form-items .f-g input{
+    padding-left: 10px;
+    border: none;
+    border-bottom: 2px solid black;
+    height: 3rem;
+    color: gray;
+    width: 80%;
+}
+
+.modal .modal-content #ftext form #form-items .f-g input:hover{
+    border: none;
+}
+
+.modal .modal-content #ftext form #form-items .f-g input:focus{
+    border: none;
+    color: black;
+}
+
+.modal .modal-content #ftext form #form-items .f-g-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 80%;
+}
+
+.modal .modal-content #ftext form #form-items .f-g-2 button{
+    border: none;
+    border-radius: 0.7rem;
+    height: 3rem;
+    color: white;
+    width: 30%;
+}
+
+.modal .modal-content #ftext form #form-items .f-g-2 button[type=submit]{
+    background-color:#26847B;
+}
+
+.modal .modal-content #ftext form #form-items .f-g-2 button[type=reset]{
+    background-color: darkorange;
+}
+
+.modal .modal-content #ftext form #form-items .f-g-2 button[type=reset]:hover{
+    background-color: darkgoldenrod;
+}
+
+.modal .modal-content #ftext form #form-items .f-g-2 button[type=submit]:hover {
+    background-color: #216869;
+}
+
+#perg {
+    display: flex;
+    flex-direction: row;
+}

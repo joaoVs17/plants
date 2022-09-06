@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% load livereload_tags %}
+{% livereload_script %}
+{% block title %}Main{% endblock title %}
+{% block cssDoc %}<link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">{% endblock cssDoc %}
+
+{% block content %}
+
+<header id="" >
+    <nav id="navbar">
+        <img src="{% static 'imgs/tree.png' %}" id="ico" alt="">
+        <div id="nav2">
+            <ul>
+                <li><a href="{% url 'comunidade' %}">Plantas da Comunidade</a></li>
+            </ul>
+        </div>
+        <div id="account">
+            <div id="mac"><a href="#" id="btnMp">Feed</a></div>
+            <div id="mp"><a href="{% url 'myplants'%}" id="btnMp">Minhas Plantas</a></div>
+            <div id="exit"><a href="{% url 'exit' %}">Sair</a></div>
+            <div id="user"><div>{{request.user.username.0}}</div></div>
+        </div>
+    </nav>
+</header>
+
+<div id="container">
+    <div id="box">
+        <div id="lastPlantasComu">
+            <div id="leg">Últimas plantas adicionadas pela comunidade</div>
+            {% for ultima in ultimas %}
+                <a class="cart" href="#" style="display: flex;background-image: url('{{ultima.image_url}}');"><div>Ver</div></a>
+            {% endfor %}
+        </div>
+        <div id="lastPlantasVc">
+            <div id="legvc">Últimas plantas adicionadas por você:</div>
+            {% for ultima in ultimasVc %}
+                <a class="minicart" href="#" style="display: flex;background-image: url('{{ultima.image_url}}');"><div>Ver</div></a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/scripts/scriptmain.js' %}"></script>
+
+
+{% endblock content %}
+

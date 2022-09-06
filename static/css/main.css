@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+body {
+    max-width: 100%;
+    max-height: auto; 
+    min-width: 750px;
+    min-height: 100vh; 
+    background: linear-gradient(to top, #499F78 0%, #7FCC72 40%, white 80%);
+}
+
+header {
+    background-color: none;
+    display: flex;
+    min-width: 900px;
+}
+
+header #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    max-height: 5rem;
+    background-color: none;
+}
+
+header #navbar #ico{
+    height: 5rem;
+    width: auto;
+    background-color: none;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+
+header #navbar #nav2 {
+    background-color: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header #navbar #nav2 ul{
+    margin: 0;
+    height: 100%;
+    background-color: none;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap:3rem;
+}
+
+header #navbar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+    height: 3rem;
+    width: 7rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.7rem;
+}
+
+header #navbar #nav2 ul li a{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    border: none;
+    color: black;
+}
+
+header #navbar #nav2 ul li a:hover{
+    background-color: lightgray;
+}
+
+header #navbar #account {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1%;
+}
+
+header #navbar #account #mac{
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0.7rem;
+    height: 3rem;
+    width: 6rem;   
+}
+
+header #navbar #account #mac a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    background-color: none;
+    height: 100%;
+    width: 100%;
+}
+
+header #navbar #account #mac a:hover{
+    background-color: lightgray;
+}
+
+header #navbar #account #mp {
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    border-radius: 0.7rem;
+    height: 3rem;
+    width: 6rem;    
+}
+
+header #navbar #account #mp a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    background-color: none;
+    height: 100%;
+    width: 100%;
+}
+
+header #navbar #account #mp a:hover{
+    background-color: lightgray;
+}
+
+header #navbar #account #exit {
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0.7rem;
+    height: 3rem;
+    width: 6rem;  
+}
+
+header #navbar #account #exit a{
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 0.7rem;
+    color: red;
+    height: 100%;
+    width: 100%;
+}
+
+header #navbar #account #exit a:hover {
+    color: darkred;
+}
+
+header #navbar #account #user{
+    height: 100%;
+    width: 4rem;
+    border-left: 3px #222;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+header #navbar #account #user div {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #222;
+    border-radius: 100%;
+    height: 3rem;
+    width: 3rem;
+}
+
+
+#container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+#container #box{
+    margin-top: 2rem;
+    height: 90%;
+    width: 90%;
+}
+
+#container #box #lastPlantasComu {
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+#container #box #lastPlantasVc {
+    padding-top: 20px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-top: 2px dotted #222;
+    
+}
+#container #box #lastPlantasVc #legvc {
+    text-align: center;
+    width: auto;
+    height: 100%;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+#container #box #lastPlantasVc .minicart{
+    width: 10%;
+    height: 9rem;
+    border-radius: 0.7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 5px 5px #222);
+    text-decoration: none;
+    color: black;
+}
+
+#container #box #lastPlantasVc .minicart div{
+    display: none;
+    background-color:rgb(38,132,123,0.85);
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7rem;
+    height: 3rem;
+    width: 50%;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+#container #box #lastPlantasVc .minicart:hover{
+    filter: brightness(0.5);
+    filter: drop-shadow(10px 10px 10px #222);
+}
+
+#container #box #lastPlantasComu .cart {
+    width: 19%;
+    height: 17rem;
+    border-radius: 0.7rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 5px 5px #222);
+}
+#container #box .cart div {
+    display: none;
+}
+
+#container #box #lastPlantasComu .cart:hover{
+    filter: brightness(0.5);
+    filter: drop-shadow(10px 10px 10px #222);
+}
+
+#container #box #lastPlantasComu #leg {
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: large;
+    border-bottom:2px dotted #222;
+}
+
+/*Parte do MyPlants*/
+#container #box #myplants{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+#container #box #addModal {
+    display: none;
+}
+
+#container #box #myplants #btnAdd {
+    height: 3rem;
+    text-decoration: none;
+    width: 6rem;
+    border-radius: 0.7rem;
+    border: none;
+    background-color: #26847B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#container #box #myplants #btnAdd:hover{
+    background-color: #216869;
+}
+
+/*modal*/
+#editModal {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#editModal .modal-content {
+    width: 80%;
+    height: 90%;
+    background-color: white;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#editModal .modal-content form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

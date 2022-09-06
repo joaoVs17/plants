@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% load livereload_tags %}
+{% livereload_script %}
+{% block title %}Main{% endblock title %}
+{% block cssDoc %}<link rel="stylesheet" type="text/css" href="{% static '/css/comunidade.css' %}">{% endblock cssDoc %}
+
+{% block content %}
+
+<header id="" >
+    <nav id="navbar">
+        <img src="{% static 'imgs/tree.png' %}" id="ico" alt="">
+        <div id="nav2">
+            <ul>
+                <li><a href="#">Plantas da Comunidade</a></li>
+            </ul>
+        </div>
+        <div id="account">
+            <div id="mac"><a href="{% url 'myaccount'%}" id="btnMp">Feed</a></div>
+            <div id="mp"><a href="{% url 'myplants'%}" id="btnMp">Minhas Plantas</a></div>
+            <div id="exit"><a href="{% url 'exit' %}">Sair</a></div>
+            <div id="user"><div>{{request.user.username.0}}</div></div>
+        </div>
+    </nav>
+</header>
+
+<div id="container">
+    <div id="box">
+        <div id="plantas">
+            {% for planta in plantas %}
+                <div class='l'>
+                    <a class="cart" href="#" style="display: flex;background-image: url('{{planta.image_url}}');"><div>Ver</div></a>
+                    <div class="ltext">
+                        <div>
+                            <h2>{{planta.name}}</h1>
+                            <h5>Contribuidor: {{planta.contributor}}</h1>
+                        </div>
+                        <div>
+                            <h6>Data de adição: {{planta.last_modf}}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static '/scripts/scriptmain.js' %}"></script>
+
+
+{% endblock content %}
+
