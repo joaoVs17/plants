@@ -16,9 +16,11 @@ class MyPlants(LoginRequiredMixin,View):
     login_url = '/'
     redirect_field_name = 'home'
     def get(self,request):
+        status = request.GET.get('status')
         plantas = Plant.objects.all()
         context = {
-            'plantas':plantas
+            'plantas':plantas,
+            'status': status
         }
         return render(request, 'myplants.html', context)
     def post(self, request):
@@ -34,17 +36,14 @@ class Add(LoginRequiredMixin, View):
         origem = request.POST.get('origem')
         url = request.POST.get('url')
         sobre = request.POST.get('sobre')
-        if (Plant.objects.filter(scientific_name=cientifico)==None):
+        if (len(Plant.objects.filter(scientific_name=cientifico))<1):
             try:
                 Plant.objects.create(name=nome,scientific_name=cientifico,origin=origem,image_url=url,about=sobre,contributor=request.user)
-                messages.add_message(request, messages.INFO, 'Planta cadastrada com sucesso')
-                return redirect('myplants')
+                return redirect('/myaccount/myplants/?status=0')
             except Exception:
-                messages.add_message(request, messages.INFO, 'Houve um erro no sistema')
-                return redirect('myplants')
+                return redirect('/myaccount/myplants/?status=1')
         else:
-            messages.add_message(request, messages.INFO, 'Essa planta já foi inserida')
-            return redirect('myplants')
+            return redirect('/myaccount/myplants/?status=2')
 
 @login_required(login_url='/')
 def deletePlant(request,pk):

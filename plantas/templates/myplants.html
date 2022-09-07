@@ -24,11 +24,20 @@
     </nav>
 </header>
 
-{% if messages %}
-    {% for message in messages %}
-    <div class="alert">{{message}}</div>
-    {% endfor %}
-{% endif %}
+
+    {% if status == '0' %}
+        <div class='alert alert-success' role="alert" style="text-align:center;">Planta cadastrada com sucesso</div>
+    {% endif %}
+    {% if status == '1' %}
+        <div class='alert alert-danger' role="alert" style="text-align:center;">Erro interno do sistema</div>
+    {% endif %}
+    {% if status == '2' %}
+        <div class='alert alert-warning' role="alert" style="text-align:center;">Já existe uma planta cadastrada com esse nome científico</div>
+    {% endif %}
+
+
+
+
 
 <div id="container">
     <div id="box">
