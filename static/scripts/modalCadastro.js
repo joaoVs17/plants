@@ -53,7 +53,7 @@ if (nameError != '1' && nameError!='2') {
 
 
 
-
+//Para o botão de Criar conta
 btnSignup.onclick = function() {
     userExists.style.display = 'none';
     formu.reset();
@@ -69,6 +69,8 @@ btnSignup.onclick = function() {
     modal.style.display = 'flex';
 }
 
+
+//para o botão de Entrar 
 btnSignin.onclick = function() {
     userExists.style.display = 'none';
     formu.reset();
@@ -84,6 +86,8 @@ btnSignin.onclick = function() {
     modal.style.display = 'flex';
 }
 
+
+// isso serve tanto para Entrar quanto para Cadastre-se 
 closex.onclick = function() {
     modal.style.display = 'none';
 }
@@ -93,6 +97,9 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+//
+
+
 
 //para signin
 
