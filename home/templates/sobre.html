@@ -52,6 +52,15 @@
         </div>
         <div id="ftext">
             <form action="" method="POST" id='formu'>
+                    <div id="userExists" class="alert alert-warning" role="alert">
+                        {% if status == '1' %}
+                            Já existe um usuário com este nome. Por favor, tente novamente!
+                        {% endif %}
+                        {% if status == '2' %}
+                            Usuário ou senha incorretos. Por favor, tente novamente.
+                        {% endif %}
+                    </div>
+                
                 {% csrf_token %}
                 <div id="form-items">
                     <div class="f-g">
@@ -76,7 +85,7 @@
                         <p id="pergunta"></p> <a href='#' id='acao'></a>
                     </div>
                 </div>
-                <input type="hidden" id="url" data-url="{% url 'register' %}" />
+                <input type="hidden" id="error" data-url="{% url 'register' %}" name="{{status}}">
             </form>
         </div>
     </div>

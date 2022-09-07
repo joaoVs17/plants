@@ -27,7 +27,7 @@ def userAuthenticate(request):
     password = request.POST.get('password')
     user = authenticate(request, username=username, password=password)
     if user==None:
-        return redirect('home')
+        return redirect('/?status=2')
     else:
         login (request, user)
         return redirect('myaccount')

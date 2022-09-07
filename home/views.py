@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.views import View
 
@@ -8,7 +9,11 @@ def home(request):
         if request.user.is_authenticated:
                 return redirect('myaccount')
         else:
-                return render(request, 'home.html')
+                status = request.GET.get('status')
+                context = {
+                        'status': status,
+                }
+                return render(request, 'home.html', context)
 
 def sobre(request):
         if request.user.is_authenticated:
